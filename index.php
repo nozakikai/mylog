@@ -24,11 +24,13 @@ $logs = $pdo->query(
 <ul>
     <?php foreach ($logs as $log): ?>
         <li>
+            <a href="edit.php?id=<?= $log['id'] ?>">編集</a>
             <?= $log['log_date'] ?> /
             <?= $log['category'] ?> /
             <?= $log['duration'] ?>分
             - <?= htmlspecialchars($log['memo']) ?>
-            
+            <a href="delete.php?id=<?= $log['id'] ?>">削除</a>
+
         </li>
     <?php endforeach; ?>
 </ul>
